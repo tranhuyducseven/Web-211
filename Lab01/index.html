@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <title>Lab01_L09_Tran_Huy_Duc-1911071</title>
   </head>
   <body>
-    <div class="header" style="margin-top: 50px">
+    <div class="header">
       <img src="./refs/images01/logo.png" alt="images01" class="header__img" />
     </div>
     <div class="content">
@@ -42,8 +49,6 @@
             src="http://techslides.com/demos/sample-videos/small.3gp"
             type="video/3gp"
           />
-
-          Your browser does not support HTML5 video.
         </video>
       </div>
       <div class="content__ourLocations">
@@ -82,26 +87,25 @@
         </div>
       </div>
       <div class="content__upComingClasses">
-        <div class="content__upCommingClasses-table">
-          <table>
-            <tr>
-              <td>
-                <b class="content__upCommingClasses-heading">Location</b>
-              </td>
-              <td>
-                <b class="content__upCommingClasses-heading">Topic</b>
-              </td>
-            </tr>
-            <tr>
-              <td>New York</td>
-              <td>JavaScript & jQuery</td>
-            </tr>
-            <tr>
-              <td>San Francisco</td>
-              <td>HTML & CSS</td>
-            </tr>
-          </table>
-        </div>
+        <h1 class="content__intro-heading">Upcoming Classes</h1>
+        <table class="content__upCommingClasses-table">
+          <tr>
+            <td>
+              <b class="content__upCommingClasses-heading">Location</b>
+            </td>
+            <td>
+              <b class="content__upCommingClasses-heading">Topic</b>
+            </td>
+          </tr>
+          <tr>
+            <td>New York</td>
+            <td>JavaScript & jQuery</td>
+          </tr>
+          <tr>
+            <td>San Francisco</td>
+            <td>HTML & CSS</td>
+          </tr>
+        </table>
       </div>
       <div class="content_signUp">
         <h1 class="content_signUp-heading">Sign Up!</h1>
@@ -113,35 +117,36 @@
               <label for="email">Email:</label>
               <input type="email" class="form-control" id="email" />
             </div>
-            <div class="form-group">
-              <label for="Locations" id="Locations">Locations:</label>
-              <select name="Locations">
-                <option value="san francisco">San Francisco</option>
-                <option value="newyork">New York</option>                
-                </select>
-              </div>
-              <div class="form-check">
-                <label for="Sex" id="Sex">Gender:</label>      
-                <div>                    
-                   <span>Female</span><input type="radio" name="sex" value="female">
-                   <span>Male</span><input type="radio" name="sex" value="male" checked>
-                </div>           
-              </div>
-              <label for="Experience" id="Experience">Experience:</label>
-              <div class="form-group">                
-                <textarea name="message" rows="2" cols="23">                
-                  </textarea>
-                </div>        
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          </div>
+          <div class="form-group">
+            <label id="Locations">Locations:</label>
+            <select name="Locations">
+              <option value="san francisco">San Francisco</option>
+              <option value="newyork">New York</option>
+            </select>
+          </div>
+          <fieldset class="form-gender">
+            <legend>Gender:</legend>
+            <label>Female</label>
+            <input type="radio" />
+            <label>Male</label>
+            <input type="radio" checked />
+          </fieldset>
+
+          <label>Experience:</label>
+          <div class="form-group">
+            <textarea name="message" rows="2" cols="23"> </textarea>
+          </div>
+          <button type="submit" class="sign-up-btn">Sign up</button>
         </form>
       </div>
     </div>
-    <div class="footer" style="margin: 5px 0px;">
-      <a  href="#" class="footer__contact">Twitter</a>
-      <span class="footer__contact-separate" style="border-right:1px solid #999; margin:  5px 5px "></span>
-      <a  href="#" class="footer__contact"> Facebook </a>
-      <span class="footer__contact-separate" style="border-right:1px solid #999; margin:  5px 5px "></span>
-      <a  href="#" class="footer__contact">Flickr</a>
+    <div class="footer">
+      <a href="#" class="footer__contact">Twitter</a>
+      |
+      <a href="#" class="footer__contact"> Facebook </a>
+      |
+      <a href="#" class="footer__contact">Flickr</a>
     </div>
   </body>
 </html>
