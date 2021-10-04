@@ -19,6 +19,7 @@ html {
 body {
   margin: 15px;
 }
+/*---------------header------------*/
 .header {
   height: 150px;
 }
@@ -26,6 +27,9 @@ body {
   border: 6px solid var(--red-color);
   border-radius: 12px;
 }
+
+/*---------------content------------*/
+
 .about {
   margin: 20px 0;
 }
@@ -81,4 +85,56 @@ body {
 }
 .our-locations-link--red {
   color: var(--red-color);
+}
+
+.upcoming-classes-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 32px;
+}
+.classes-table {
+  display: flex;
+  width: 240px;
+}
+
+.column {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+.first-column {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+.table-cell {
+  font-size: 1.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 8px 8px;
+  text-align: center;
+  line-height: 100%;
+}
+.head-cell {
+  font-weight: 700;
+}
+
+/*------------- footer----------------*/
+.footer {
+  margin: 32px 0 250px;
+}
+.footer__contact {
+  font-size: 1.6rem;
+  color: #0000ff;
+}
+.footer__contact:first-child {
+  text-decoration: none;
+  color: #86a5ab;
+  font-weight: 1000;
+  text-shadow: 2px 1px 3px rgb(0 0 0 / 65%);
+}
+
+.separate {
+  content: "";
+  border-left: 1.5px solid #000;
+  font-size: 1.4rem;
+  margin: 0 5px;
 }
