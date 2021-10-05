@@ -3,8 +3,6 @@
   --blue-color: #0000ff;
   --white-color: #fff;
   --black-color: #000;
-  --heading-color: #881d3a;
-  --text-color: #333;
 }
 * {
   box-sizing: inherit;
@@ -18,7 +16,7 @@ html {
 
 body {
   margin: 0px;
-  background-color: #7a7777;
+  background-color: #a8a0a0;
 }
 .wrapper {
   width: 750px;
@@ -29,14 +27,12 @@ body {
 .header {
   height: 50px;
   background-color: #d3d3d3;
-  display: flex;
-  align-items: center;
+  line-height: 50px;
 }
 .header-heading {
   margin-left: 15px;
   font-size: 3.2rem;
   font-weight: 700;
-  line-height: 100%;
 }
 .navbar {
   height: 30px;
@@ -108,7 +104,7 @@ body {
 .footer {
   height: 40px;
   background-color: #cece8b;
-  display: flex;
+  line-height: 40px;
 }
 .footer-heading {
   margin: auto 0 auto 15px;

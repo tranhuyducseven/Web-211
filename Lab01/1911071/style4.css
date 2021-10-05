@@ -1,0 +1,132 @@
+:root {
+  --red-color: #ff0000;
+  --blue-color: #1075fef7;
+  --white-color: #fff;
+  --black-color: #000;
+  --yellow-color: #ffff00;
+  --green-color: #2c762c;
+}
+* {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  color: ye;
+}
+
+body {
+  margin: 0px;
+  background-color: #f4f4f4;
+}
+.wrapper {
+  height: 720px;
+  width: 800px;
+  background-color: var(--white-color);
+  margin: 0 auto;
+}
+/*-----header--------*/
+
+.header {
+  height: 50px;
+  background-color: #8a8484;
+}
+.header-heading {
+  margin: 0;
+  padding: 6px 15px;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+/*-----navbar--------*/
+
+.navbar {
+  height: 50px;
+  background-color: var(--blue-color);
+}
+.navbar-list {
+  height: 100%;
+  display: flex;
+  padding: 0 0 0 50px;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+}
+.navbar-link {
+  font-size: 1.59rem;
+  padding: 4px 10px 4px 0;
+  margin-right: 5px;
+  color: var(--white-color);
+  font-weight: 400;
+}
+/*-----content--------*/
+.content {
+  height: 570px;
+  display: flex;
+}
+.coulumn1 {
+  width: 250px;
+}
+.coulumn1__row {
+  height: 150px;
+  background-color: var(--yellow-color);
+}
+.coulumn1__row--style2 {
+  background-color: #c0baba;
+}
+.coulumn1__row-list {
+  margin: 0;
+}
+
+.coulumn1__row-link {
+  font-size: 1.59rem;
+  font-weight: 500;
+  padding: 2px;
+  display: inline-block;
+  color: var(--blue-color);
+}
+.coulumn2 {
+  flex: 1;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
+.column2-row1 {
+  flex: 1;
+}
+.column2-row1__paragraph,
+.column2__sub-col-paragraph {
+  font-size: 1.59rem;
+  margin: 0 15px 20px;
+  padding-top: 30px;
+  text-align: justify;
+  line-height: 120%;
+  font-weight: 500;
+}
+.column2-row2 {
+  height: 128px;
+  display: flex;
+}
+.colum2__sub-col {
+  flex: 1;
+  background-color: var(--green-color);
+}
+.colum2__sub-col--style2 {
+  background-color: var(--red-color);
+}
+/*------------footer-------------*/
+.footer {
+  height: 50px;
+  background-color: var(--blue-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-header {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
