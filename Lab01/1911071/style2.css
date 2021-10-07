@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  max-width: 980px;
+  width: 980px;
   margin: 15px;
 }
 /*---------------header------------*/
