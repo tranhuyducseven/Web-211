@@ -70,22 +70,20 @@ html {
   position: relative;
 }
 .site-titile {
-
-}
-.site-title__link {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 100%;
   padding: 0 20px;
   margin: 0;
   color: var(--white-color);
+  display: inline-block;
 }
 
 .navbar_list {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0 0 -25px 70px;
+  margin: 0;
 }
 
 .navbar-link {
@@ -340,7 +338,7 @@ html {
   }
   .header__search {
     flex:1;
-    margin: 0 5px;
+
   }
   .navbar_list {
     display: none;
@@ -348,7 +346,9 @@ html {
   .menu{
     display: block;
   }
-
+  .home-product__dir{
+    font-size: 1.4rem;
+  }
 }
 /*mobile <740px*/
 @media only screen and (max-width: 739px) {
@@ -360,15 +360,21 @@ html {
     }
     .site-titile {
       font-size: 2rem;
-      margin-right: 5px;
+      padding-right: 70px;
     }
     .header__search{
-      margin: 0 40px;
+      margin:0 10px;
     }
     .header__search-input{
       font-size: 1.4rem;
     }
-
+    .menu{
+    position: relative;
+    padding: 0 10px;
+    }
+    .menu-list{
+      right:-6px;
+    }
 
 }
 /*tablet >=740 and < 1024px*/
