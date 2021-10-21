@@ -346,9 +346,7 @@ html {
   .menu{
     display: block;
   }
-  .home-product__dir{
-    font-size: 1.4rem;
-  }
+
 }
 /*mobile <740px*/
 @media only screen and (max-width: 739px) {
@@ -375,6 +373,9 @@ html {
     .menu-list{
       right:-6px;
     }
+    .home-product__dir a{
+      font-size: 1rem;
+    }
 
 }
 /*tablet >=740 and < 1024px*/
@@ -382,5 +383,7 @@ html {
   .site-titile {
     font-size: 2.6rem;
   }
-
+  .home-product__dir a{
+    font-size: 1.6rem;
+  }
 }
