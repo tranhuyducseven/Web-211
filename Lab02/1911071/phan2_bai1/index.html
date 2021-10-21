@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Lab02_phan2_bai1</title>
+  </head>
+  <body>
+    <div class="button-wrapper">
+      <div class="button button--createTable">Create new table</div>
+      <div class="button button--insertRow">Insert one row</div>
+      <div class="button button--insertCol">Insert one column</div>
+      <div class="button button--removeTable">Remove Table</div>
+    </div>
+
+    <div class="removeIndex-wrapper">
+      <div class="removeIndex">
+        <div>
+          <label>Remove Row:</label>
+          <input type="text" id="rowInput" />
+        </div>
+        <div class="button button--submit rowRemoveBtn">OK</div>
+      </div>
+      <div class="removeIndex">
+        <div>
+          <label>Remove Column:</label>
+          <input type="text" id="colInput" />
+        </div>
+        <div class="button button--submit colRemoveBtn">OK</div>
+      </div>
+    </div>
+
+    <div id="mytable"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
