@@ -38,7 +38,7 @@
       <div class="form-group">
         <label for="birthday" class="form-label">Your birthday</label>
         <select class="form-control" id="birthday-day">
-          <option value="day">Day</option>
+          <option value="0">Day</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -72,7 +72,7 @@
           <option value="31">31</option>
         </select>
         <select class="form-control" id="birthday-month">
-          <option value="month">
+          <option value="0">
             Month
           </option>
           <option value="1">Jan</option>
@@ -89,7 +89,7 @@
           <option value="12">Dec</option>
         </select>
         <select class="form-control" id="birthday-year">
-          <option value="year">
+          <option value="0">
             Year
           </option>
           <option value="1920">1920</option>
@@ -200,19 +200,19 @@
           </div>
           <div class="col">
             <div class="form-check">
-              <input class="form-check-input " type="radio" name="gender" id="male">
+              <input class="form-check-input " type="radio" name="gender" id="male" value="male">
               <label class="form-check-label" for="male">
                 Male
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gender" id="female">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
               <label class="form-check-label" for="female">
                 Female
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gender" id="other">
+              <input class="form-check-input" type="radio" name="gender" id="other" value="other">
               <label class="form-check-label" for="other">
                 Other
               </label>
@@ -224,7 +224,7 @@
       <div class="form-group">
         <label for="country" class="form-label">Country</label>
         <select class="form-control" id="country">
-          <option value="country">--- your country ---</option>
+          <option value="0">--- your country ---</option>
           <option value="1">Vietnam</option>
           <option value="2">Australia</option>
           <option value="3">United States</option>
@@ -245,13 +245,17 @@
     Validator({
       form: '#form-1',
       rules: [
-        Validator.isRequired('#firstname'),
-        Validator.isRequired('#lastname'),
-        Validator.isEmail('#email'),
-        Validator.isPassword('#password'),
         Validator.isValidLength('#firstname'),
         Validator.isValidLength('#lastname'),
+        Validator.isEmail('#email'),
         Validator.isValidLength('#password'),
+        Validator.isRequiredBirthday('#birthday-day'),
+        Validator.isRequiredBirthday('#birthday-month'),
+        Validator.isRequiredBirthday('#birthday-year'),
+        Validator.isRequiredCountry('#country'),
+        Validator.isValidAbout('#about')
+
+  
       ]
     });
   </script>
