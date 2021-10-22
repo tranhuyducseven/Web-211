@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Lab02_phan2_bai2</title>
+  </head>
+  <body>
+    <div class="calculator-wrapper">
+      <h1>Calculator</h1>
+      <form>
+        <label for="num1">The first number :</label><br />
+        <input type="text" id="num1" br />
+        <label for="num2">The second number :</label><br />
+        <input type="text" id="num2" br /><br />
+        <span>Operator: </span>
+        <select id="operator">
+          <option>+</option>
+          <option>-</option>
+          <option>*</option>
+          <option>/</option>
+          <option>^</option>
+        </select>
+        <div class="button">Submit</div>
+      </form>
+      <p>
+        If you click the <b> Submit </b> button, the result of the calculation
+        to be performed:
+      </p>
+      <input type="text" id="result" /><br /><br />
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

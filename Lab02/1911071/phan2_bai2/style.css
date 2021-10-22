@@ -1,0 +1,45 @@
+h1 {
+  font-size: 50px;
+  color: #0cb1c7;
+}
+label,
+span {
+  color: #2196f3;
+  font-size: 30px;
+}
+input {
+  border: 1px solid #ccc;
+  padding: 15px;
+  display: block;
+  width: 300px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+select {
+  border: 1px solid rgb(231, 86, 18);
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 25px;
+  background-color: rgb(255, 255, 255);
+}
+p{
+    font-size: 25px;  
+}
+
+.calculator-wrapper {
+  margin: 50px auto;
+  padding: 0 400px;
+}
+.button {
+  width: 150px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: rgb(240, 60, 60);
+  font-weight: 600;
+}
