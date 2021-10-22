@@ -237,27 +237,38 @@
         <textarea style="height: 100%;" class="form-control" id="about" rows="7" placeholder="Write something about you here..."></textarea>
       </div>
       <button class="form-submit">Submit</button>
-      <button class="form-submit form-submit--reset">Reset</button>
+      <button class="form-submit form-submit--reset" type="reset">Reset</button>
     </form>
   </div>
   <script type="text/javascript" src='./main.js'> </script>
   <script>
+     document.addEventListener('DOMContentLoaded', function () {       
     Validator({
       form: '#form-1',
       rules: [
+      Validator.isRequired('#firstname'),
         Validator.isValidLength('#firstname'),
+        Validator.isRequired('#lastname'),
         Validator.isValidLength('#lastname'),
+        Validator.isRequired('#email'),
         Validator.isEmail('#email'),
+        Validator.isRequired('#password'),
         Validator.isValidLength('#password'),
         Validator.isRequiredBirthday('#birthday-day'),
         Validator.isRequiredBirthday('#birthday-month'),
         Validator.isRequiredBirthday('#birthday-year'),
         Validator.isRequiredCountry('#country'),
-        Validator.isValidAbout('#about')
-
-  
-      ]
+        Validator.isValidAbout('#about')  
+        
+      ],
+      onSubmit: function () {         
+            alert('"Completed!');
+          },
+     logReset:function(event) {
+          alert('"Form reset!');
+      },
     });
+  });
   </script>
 </body>
 
