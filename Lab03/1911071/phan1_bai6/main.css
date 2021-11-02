@@ -78,10 +78,12 @@ legend {
   border-color: #1dbfaf;
 }
 .form-message {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6rem;
-  padding: 4px 0 0;
+  padding: 4px 4px;
+  margin-top: 5px;
   text-align: left;
+  color: red;
 }
 
 .form-check {
@@ -117,7 +119,40 @@ legend {
 .break {
   margin-top: 36px;
 }
+.toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
 
+.toast {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border-left: 4px solid #71be34;
+  padding: 20px 0;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.09);
+  animation: slideInLeft ease 0.4s, fadeOut linear 1s 1.5s forwards;
+  height: 50px;
+  width: 400px;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
 .row {
   display: flex;
 }

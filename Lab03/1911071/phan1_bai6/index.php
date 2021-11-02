@@ -1,104 +1,6 @@
 <?php
-// define variables and set to empty values
-$fNameErr = $lNameErr = $emailErr  = $passwordErr =  $birthdayErr = $genderErr = $countryErr = $aboutErr = "";
-$fName = $lName = $email  = $password = $day = $month = $year = $gender = $country = $about = "";
-$checkErr = false;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["fname"])) {
-        $fNameErr = "Name is required";
-        $checkErr = true;
-    } else {
-        $fName = test_input($_POST["fname"]);
-        // check if name length in range from 2 to 30
-        if (strlen($fName) < 2 || strlen($fName) > 30) {
-            $fNameErr = "Must contains 2-30 characters";
-            $checkErr = true;
-        }
-    }
-    if (empty($_POST["lname"])) {
-        $lNameErr = "Name is required";
-        $checkErr = true;
-    } else {
-        $lName = test_input($_POST["lname"]);
-        // check if name length in range from 2 to 30
-        if (strlen($lName) < 2 || strlen($lName) > 30) {
-            $lNameErr = "Must contains 2-30 characters";
-            $checkErr = true;
-        }
-    }
-
-    if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
-        $checkErr = true;
-    } else {
-        $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
-        $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-        if ((preg_match($regex, $email))) {
-            $emailErr = "Please enter a valid email address";
-            $checkErr = true;
-        }
-    }
-
-    if (empty($_POST["password"])) {
-        $passwordErr = "Password is required";
-        $checkErr = true;
-    } else {
-        $password = test_input($_POST["password"]);
-        // check if password length in range from 2 to 30
-        if (strlen($password) < 2 || strlen($password) > 30) {
-            $passwordErr = "Must contains 2-30 characters";
-            $checkErr = true;
-        }
-    }
-
-
-
-    if ($_POST["day"] == 0 || $_POST["month"] == 0 || $_POST["year"] == 0) {
-        $birthdayErr = "Please enter Birthday!";
-        $checkErr = true;
-    } else {
-        $day    = $_POST["day"];
-        $month  = $_POST["month"];
-        $year   = $_POST["year"];
-        $checkDate = checkdate($month, $day, $year);
-        if (!$checkDate) {
-            $birthdayErr =  "Birthday is invalid!";
-            $checkErr = true;
-        }
-    }
-
-    if (empty($_POST["gender"])) {
-        $genderErr = "Gender is required";
-        $checkErr = true;
-    } else {
-        $gender = test_input($_POST["gender"]);
-    }
-
-    if ($_POST["country"] == 0) {
-        $countryErr = "You must enter your country ";
-        $checkErr = true;
-    } else {
-        $country = test_input($_POST["country"]);
-    }
-
-    if (empty($_POST["about"])) {
-        $about = "";
-    } else {
-        $about = test_input($_POST["about"]);
-        if (strlen($about) < 10000) {
-            $aboutErr = "Must be less than 10000 characters";
-            $checkErr = true;
-        }
-    }
-}
-
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+if (isset($_POST["submit"])) {
+  require 'validator.php';
 }
 ?>
 <!DOCTYPE html>
@@ -122,22 +24,25 @@ function test_input($data)
 
       <div class="form-group">
         <label for="fname" class="form-label">First name</label>
-        <input name="fname" type="text" value="<?php echo $fname; ?>" placeholder="Ex: Tran Huy" class="form-control" />
+        <input name="fname" type="text" value="<?php echo $fName; ?>" placeholder="Ex: Tran Huy" class="form-control" />
         <span class="form-message"><?php echo $fNameErr; ?></span>
       </div>
       <div class="form-group">
         <label for="lname" class="form-label">Last name</label>
-        <input name="lname" type="text" value="<?php echo $lname; ?>" placeholder="Ex: Duc" class="form-control" />
+        <input name="lname" type="text" value="<?php echo $lName; ?>" placeholder="Ex: Duc" class="form-control" />
+        <span class="form-message"><?php echo $lNameErr; ?></span>
       </div>
 
       <div class="form-group">
         <label for="email" class="form-label">Email</label>
         <input name="email" type="text" value="<?php echo $email; ?>" placeholder="Ex: yourname@example.com" class="form-control" />
+        <span class="form-message"><?php echo $emailErr; ?></span>
       </div>
 
       <div class="form-group">
         <label for="password" class="form-label">Password</label>
-        <input name="password" type="text" placeholder="Your password" class="form-control" />
+        <input name="password" type="password" placeholder="Your password" class="form-control" />
+        <span class="form-message"><?php echo $passwordErr; ?></span>
       </div>
       <div class="form-group">
         <label class="form-label">Your birthday</label>
@@ -175,7 +80,7 @@ function test_input($data)
           <option value="30">30</option>
           <option value="31">31</option>
         </select>
-        <select class="form-control" id="birthday-month" name="month">
+        <select class="form-control" id="birthday-month" name="month" >
           <option value="0">
             Month
           </option>
@@ -293,7 +198,7 @@ function test_input($data)
           <option value="2014">2014</option>
           <option value="2015">2015</option>
         </select>
-
+        <span class="form-message"><?php echo $birthdayErr; ?></span>
       </div>
 
       <div class="form-group">
@@ -322,6 +227,7 @@ function test_input($data)
             </div>
           </div>
         </div>
+        <span class="form-message"><?php echo $genderErr; ?></span>
       </div>
 
       <div class="form-group">
@@ -334,21 +240,26 @@ function test_input($data)
           <option value="4">India</option>
           <option value="5">Other</option>
         </select>
+        <span class="form-message"><?php echo $countryErr; ?></span>
       </div>
       <div class="form-group">
         <label for="about" class="form-label">About</label>
         <textarea style="height: 100%;" class="form-control" id="about" name="about" rows="7" placeholder="Write something about you here..."></textarea>
+        <span class="form-message"><?php echo $aboutErr; ?></span>
       </div>
       <button class="form-submit" name="submit" type="submit">Submit</button>
-      <button class="form-submit form-submit--reset" name="reset">Reset</button>
+      <button class="form-submit form-submit--reset" name="reset" type="submit">Reset</button>
     </form>
   </div>
-  <?php if (isset($_POST["submit"]) && !$check) { ?>
-    <div class="message">
-      <h1>Complete!</h1>
+  <?php if (isset($_POST['submit']) && !$checkErr) { ?>
+    <div class="toast">
+      <h2>Complete!</h2>
+    </div>
+  <?php } else if (isset($_POST['reset'])) { ?>
+    <div class="toast" style="border-color: #ebb815">
+      <h2>Clear!</h2>
     </div>
   <?php } ?>
-
 </body>
 
 </html>

@@ -5,49 +5,49 @@ $fName = $lName = $email  = $password = $day = $month = $year = $gender = $count
 $checkErr = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["fname"])) {
-        $fNameErr = "Name is required";
+        $fNameErr = "Name is required!";
         $checkErr = true;
     } else {
         $fName = test_input($_POST["fname"]);
         // check if name length in range from 2 to 30
         if (strlen($fName) < 2 || strlen($fName) > 30) {
-            $fNameErr = "Must contains 2-30 characters";
+            $fNameErr = "Must contains 2-30 characters!";
             $checkErr = true;
         }
     }
     if (empty($_POST["lname"])) {
-        $lNameErr = "Name is required";
+        $lNameErr = "Name is required!";
         $checkErr = true;
     } else {
         $lName = test_input($_POST["lname"]);
         // check if name length in range from 2 to 30
         if (strlen($lName) < 2 || strlen($lName) > 30) {
-            $lNameErr = "Must contains 2-30 characters";
+            $lNameErr = "Must contains 2-30 characters!";
             $checkErr = true;
         }
     }
 
     if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
+        $emailErr = "Email is required!";
         $checkErr = true;
     } else {
         $email = test_input($_POST["email"]);
         // check if e-mail address is well-formed
-        $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-        if ((preg_match($regex, $email))) {
-            $emailErr = "Please enter a valid email address";
+        $regex = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+        if (!(preg_match($regex, $email))) {
+            $emailErr = "Please enter a valid email address!";
             $checkErr = true;
         }
     }
 
     if (empty($_POST["password"])) {
-        $passwordErr = "Password is required";
+        $passwordErr = "Password is required!";
         $checkErr = true;
     } else {
         $password = test_input($_POST["password"]);
         // check if password length in range from 2 to 30
         if (strlen($password) < 2 || strlen($password) > 30) {
-            $passwordErr = "Must contains 2-30 characters";
+            $passwordErr = "Must contains 2-30 characters!";
             $checkErr = true;
         }
     }
@@ -69,14 +69,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($_POST["gender"])) {
-        $genderErr = "Gender is required";
+        $genderErr = "Gender is required!";
         $checkErr = true;
     } else {
         $gender = test_input($_POST["gender"]);
     }
 
     if ($_POST["country"] == 0) {
-        $countryErr = "You must enter your country ";
+        $countryErr = "You must enter your country! ";
         $checkErr = true;
     } else {
         $country = test_input($_POST["country"]);
@@ -86,8 +86,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $about = "";
     } else {
         $about = test_input($_POST["about"]);
-        if (strlen($about) < 10000) {
-            $aboutErr = "Must be less than 10000 characters";
+        if (strlen($about) >10000) {
+            $aboutErr = "Must be less than 10000 characters!";
             $checkErr = true;
         }
     }
