@@ -6,28 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab03_phan_1_bai4</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        table {
+
+            border-collapse: collapse;
+            background-color: yellow;
+            margin: 100px auto;
+        }
+
+        td {
+            text-align: center;
+            width: 50px;
+            height: 40px;
+        }
+    </style>
 </head>
 
 <body>
     <?php
     function printTable()
     {
-        for ($i = 0; $i < 7; $i++) {
-            for ($j = 0; $j < 7; $j++) {
-                echo ($i + 1) * ($j + 1);
-                if ($j < 6)
-                    echo " ";
-            }
-            echo "</br>";
+
+        echo "<table>";
+        for ($x = 0; $x < 7; $x++) {
+            echo "<tr>";
+            for ($y = 0; $y < 7; $y++)
+                echo "<td>" . ($x + 1) * ($y + 1) . "</td>";
+            echo "</tr>";
         }
+        echo "</table>";
     }
     ?>
-    <div class="wrapper" style="display:flex">
-        <p style="padding-left:200px">
-            <?php
-            printTable();
-            ?>
-        </p>
+    <div class="wrapper" style>
+        <?php
+        printTable();
+        ?>
     </div>
 </body>
 
