@@ -1,10 +1,6 @@
 <?php
-require_once('createDB.php');
 require_once('database.php');
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +9,7 @@ require_once('database.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <title>CAR Tran Huy Duc 1911071</title>
+    <title>Car - List Tran Huy Duc 1911071</title>
 </head>
 
 <body>
@@ -53,6 +49,12 @@ require_once('database.php');
                             ?>
                         </tbody>
                     </table>
+                </div>
+                <div class="card-body" style="display: flex; justify-content: space-around;">
+                <a  class="btn btn-success " href="./b.php" name="submit">Add a car</a>
+                <a  class="btn btn-warning " href="./c.php" name="submit">Update a car</a>
+                <a  class="btn btn-danger " href="./d.php" name="submit">Delete a car</a>
+
                 </div>
             </div>
         <?php } ?>

@@ -2,7 +2,7 @@
 const HOST = 'localhost';
 const USERNAME = 'root';
 const PASSWORD = '';
-const DATABASE = 'CAR';
+const DATABASE = 'examples';
 function execute($sql)
 {
     $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
