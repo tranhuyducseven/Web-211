@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COOKIE Lab04 Tran Huy Duc 1911071</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		.btn{
+			min-width: 200px;
+		}
+	</style>
+</head>
+<body style="margin: 50px 15px 0 15px">
+	<div style="text-align:center;"><h1>Cookie</h1></div>
+	<form method="POST">
+		<div class="form-group">
+	      <label>Key</label>
+	      <input id="key-cookie" type="text" class="form-control" placeholder="Enter cookie's key">
+	    </div>
+
+		<div class="form-group">
+			<label>Value</label>
+			<input id="value-cookie"  type="text" class="form-control" placeholder="Enter cookie's key">
+		</div>		
+	</form>	
+	<div>
+		<h4>Note:</h4>
+		<p>
+		After each action, the <b>List of cookies </b> button must be pressed to review the list of cookies.
+		<br/>Add cookie: enter key and the value of the cookie you want to set.
+		<br/>Update cookie: enter key and the value of the cookie you want to update.
+		<br/>Delete cookie: select the key of the cookie you want to delete from the list and press the button <b>Remove  a cookie </b>
+		</p>
+	</div>		
+	<div  style="margin-top:20px; display: flex; justify-content: space-around;"class="cookie-btn">
+		<button onclick="showCookies()"class="btn btn-primary">List of cookies</a>
+		<button onclick="addCookie()"class="btn btn-success">Add a cookie</a>
+		<button onclick="updateCookie()"class="btn btn-warning">Update a cookie</button></a>
+		<button onclick="removeCookies()"class="btn btn-danger">Remove  a cookie</a>
+	</div>
+		<div class="container">
+		 <div class="card-body">
+		 	<h1 class="heading"></h1>
+            <table id="table"style="width: 800px; " class="table table-hover">
+            </table>
+         </div>
+     </div>
+	<script type="text/javascript">
+		function getAllCookies(){
+			let decodedCookie = decodeURIComponent(document.cookie);
+		  	let cookieArr = decodedCookie.split('; ');	
+		  	let data = [];
+		  	for(let i = 0; i <cookieArr.length; i++) {
+		    	var str = cookieArr[i].split('=');	
+		    	// data[i] = {
+		    	// 	str[0]: str[1];
+		    	// }
+		    	let obj = {}
+		    	obj[str[0]] = str[1];
+		    	data[i] = obj;
+		 	}
+		 	return data;
+		};	
+		function showCookies(){	
+			const table = document.getElementById('table');
+			const heading = document.querySelector('.heading');
+			heading.textContent = 'List of all cookies';		
+			let cookies = getAllCookies();				
+			const htmls = cookies.map(function(cookie, index){
+      			return `<tr> <th>${++index}</th> <th>${Object.keys(cookie)}</th><td>${Object.values(cookie)}</td></tr>`;
+    		});
+    		table.innerHTML = htmls.join("");		 
+		}
+		function setCookie(name, value, days){
+			const d = new Date();
+ 			 d.setTime(d.getTime() + (days*24*60*60*1000));
+ 		 	let expires = "expires="+ d.toUTCString();
+   			document.cookie= name + "=" + value + ";" + expires + ";path=/";
+			
+		}
+		function addCookie(){
+			const  name = document.getElementById('key-cookie').value;
+			const  value = document.getElementById('value-cookie').value;
+			if(name && value)
+			setCookie(name, value, 1);
+  			
+		}
+		function updateCookie(){
+			const name = document.getElementById('key-cookie').value;
+			const  value = document.getElementById('value-cookie').value;
+			if(name && value)
+			setCookie(name, value, 1);
+		}
+		function removeCookies(){
+			const name = document.getElementById('key-cookie').value;
+			if(name)
+			setCookie(name,"", -1);
+		}	
+		
+	</script>
+</body>
+</html>
