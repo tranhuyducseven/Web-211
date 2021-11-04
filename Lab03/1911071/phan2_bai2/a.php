@@ -30,9 +30,11 @@ require_once('database.php');
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
+                                <th scope="col">NO</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">NAME</th>
                                 <th scope="col">YEAR</th>
+                                <th scope="col" style="display:flex; justify-content: center;"><a class="btn btn-success " href="./b.php" name="submit" style="width: 50%">Add a car</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,20 +42,24 @@ require_once('database.php');
                             $sql = "SELECT * FROM cars";
                             $result = executeResult($sql);
                             $no = 1;
-                            foreach ($result as $row)
-                                echo '<tr>
-                                <th scope="row">' . $no++ . '</th>
-                                        <td>' . $row["name"] . '</td>
-                                        <td>' . $row["year"] . '</td>              
-                                </tr>';
-                            ?>
+                            foreach ($result as $row) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $no++ ?></th>
+                                    <td><?php echo $row["id"] ?></td>
+                                    <td><?php echo $row["name"] ?></td>
+                                    <td><?php echo $row["year"] ?></td>
+                                    <td style="display:flex; justify-content: space-around">
+                                        <a class="btn btn-warning " href="./c.php?id=<?php echo  $row["id"] ?>" name="submit">Update a car</a>
+                                        <a class="btn btn-danger " href="./d.php" name="submit">Delete a car</a>
+                                    </td>
+                                </tr>;
+                            <?php } ?>
                         </tbody>
+
                     </table>
                 </div>
                 <div class="card-body" style="display: flex; justify-content: space-around;">
-                <a  class="btn btn-success " href="./b.php" name="submit">Add a car</a>
-                <a  class="btn btn-warning " href="./c.php" name="submit">Update a car</a>
-                <a  class="btn btn-danger " href="./d.php" name="submit">Delete a car</a>
+
 
                 </div>
             </div>

@@ -42,14 +42,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                         $sql = "SELECT * FROM cars";
                         $result = executeResult($sql);
                         $no = 1;
-                        foreach ($result as $row)
-                            echo '<tr>
-                                <th scope="row">' . $no++ . '</th>
-                                        <td>' . $row["name"] . '</td>
-                                        <td>' . $row["year"] . '</td> 
-                                        <td style="width:60px"><a  class="btn btn-danger" href="?delete_id=' . $row['id'] . '"> Delete</a> </td>                                       
-                                        </tr>';
-                        ?>
+                        foreach ($result as $row) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $no++ ?></th>
+                                <td><?php echo $row["id"] ?></td>
+                                <td><?php echo $row["name"] ?></td>
+                                <td><?php echo $row["year"] ?></td>
+                                <td style="width:60px"><a class="btn btn-danger" href="?delete_id=<?php echo $row['id'] ?>"> Delete</a> </td>
+                                </td>
+                            </tr>;
+
+                        <?php }  ?>
                     </tbody>
 
                 </table>
