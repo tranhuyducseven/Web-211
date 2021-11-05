@@ -28,7 +28,7 @@ if ($idGet) {
                 echo '<div class="toast">Please enter id with integer type</div>';
                 $check = false;
             }
-            if (!is_string($name) || strlen($name) < 5 || strlen($name) > 40) {
+            if (strlen($name) < 5 || strlen($name) > 40) {
                 echo '<div class="toast">Please enter string type with length 5-40 characters</div>';
                 $check = false;
             }
