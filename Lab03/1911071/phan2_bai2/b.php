@@ -90,21 +90,29 @@ if (isset($_POST['add-btn'])) {
 
 <body>
     <div class="container" style="padding-top: 50px;width:50%">
-        <form method="post">
-            <div class="form-group">
-                <label>ID: </label>
-                <input type="text" class="form-control" placeholder="Enter id" name="car-id" value="<?php echo $id  ?>">
+        <div class="card">
+
+            <div class="card-body">
+                <h3 class="card-title" style="text-align: center; color: #333">
+                        Add Car's  Information
+                </h3>
+                <form method="post">
+                    <div class="form-group">
+                        <label>ID: </label>
+                        <input type="text" class="form-control" placeholder="Enter id" name="car-id" value="<?php if(isset($_POST['car-id'])) echo $_POST['car-id'];  ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>NAME: </label>
+                        <input type="text" class="form-control" placeholder="Enter name of the car" name="car-name" value="<?php if(isset($_POST['car-name'])) echo  $_POST['car-name'];  ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>YEAR: </label>
+                        <input type="text" class="form-control" placeholder="Enter year" name="car-year" value="<?php if(isset($_POST['car-year']))echo $_POST['car-year'];  ?>">
+                    </div>
+                    <button type="submit" class="btn btn-success" name="add-btn" style="width:100px">Add</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label>NAME: </label>
-                <input type="text" class="form-control" placeholder="Enter name of the car" name="car-name" value="<?php echo  $name  ?>">
-            </div>
-            <div class="form-group">
-                <label>YEAR: </label>
-                <input type="text" class="form-control" placeholder="Enter year" name="car-year" value="<?php echo $year  ?>">
-            </div>
-            <button type="submit" class="btn btn-success" name="add-btn" style="width:100px">Add</button>
-        </form>
+        </div>        
         <div class="card" style="margin-top:50px">
             <div class="card-body">
                 <p><b>Note:</b> Please do not enter duplicate <b>ID</b> </p>

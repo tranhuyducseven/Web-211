@@ -14,18 +14,23 @@ require_once('database.php');
 
 <body>
     <div class="container" style="padding-top: 50px;">
-        <form class="row g-3" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3" name="submit">Show a list of cars</button>
-            </div>
-        </form>
-        <?php if (isset($_POST['submit'])) { ?>
+        
+        
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title" style="text-align: center; color: #333">
                         Management Car's Detail Information
                     </h3>
                 </div>
+
+                <div style="padding-left: 20px" class="car-body">
+                    <form class="row g-3" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3" name="submit">Show a list of cars</button>
+                        </div>
+                    </form>
+                </div>
+                   <?php if (isset($_POST['submit'])) { ?>
                 <div class="card-body">
                     <table class="table table-striped table-hover">
                         <thead>
@@ -50,18 +55,15 @@ require_once('database.php');
                                     <td><?php echo $row["year"] ?></td>
                                     <td style="display:flex; justify-content: space-around">
                                         <a class="btn btn-warning " href="./c.php?id=<?php echo  $row["id"] ?>" name="submit">Update a car</a>
-                                        <a class="btn btn-danger " href="./d.php" name="submit">Delete a car</a>
+                                        <a class="btn btn-danger " href="./d.php?delete_id=<?php echo  $row["id"] ?>" name="submit">Delete a car</a>
                                     </td>
-                                </tr>;
+                                </tr>
                             <?php } ?>
                         </tbody>
 
                     </table>
                 </div>
-                <div class="card-body" style="display: flex; justify-content: space-around;">
-
-
-                </div>
+              
             </div>
         <?php } ?>
     </div>

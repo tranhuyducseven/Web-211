@@ -67,7 +67,7 @@ if ($idGet) {
             align-items: center;
             justify-content: center;
             border-radius: 2px;
-            border-left: 4px solid #71be34;
+            border-left: 4px solid #ffc107;
             padding: 20px 0;
             box-shadow: 0 5px 8px rgba(0, 0, 0, 0.09);
             animation: slideInLeft ease 2s, fadeOut linear 1s 10s forwards;
@@ -98,22 +98,29 @@ if ($idGet) {
 
 <body>
     <div class="container" style="padding-top: 50px;width:50%">
-        <form method="post">
-            <div class="form-group">
-                <label>ID: </label>
-                <input type="text" class="form-control" placeholder="Enter id" name="car-id" value="<?php echo $result[0]['id']  ?>">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title" style="text-align: center; color: #333">
+                        Update Car's  Information
+                </h3>
+                <form method="post">
+                    <div class="form-group">
+                        <label>ID: </label>
+                        <input type="text" class="form-control" placeholder="Enter id" name="car-id" value="<?php echo $result[0]['id']  ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>NAME: </label>
+                        <input type="text" class="form-control" placeholder="Enter name of the car" name="car-name" value="<?php echo  $result[0]['name'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>YEAR: </label>
+                        <input type="text" class="form-control" placeholder="Enter year" name="car-year" value="<?php echo $result[0]['year'] ?>">
+                    </div>
+                    <button type="submit" class="btn btn-warning" name="update-btn" style="width:100px">Update</button>        
+                 </form>
             </div>
-            <div class="form-group">
-                <label>NAME: </label>
-                <input type="text" class="form-control" placeholder="Enter name of the car" name="car-name" value="<?php echo  $result[0]['name'] ?>">
-            </div>
-            <div class="form-group">
-                <label>YEAR: </label>
-                <input type="text" class="form-control" placeholder="Enter year" name="car-year" value="<?php echo $result[0]['year'] ?>">
-            </div>
-            <button type="submit" class="btn btn-warning" name="update-btn" style="width:100px">Update</button>
-        </form>
-        </form>
+        </div>
+        
         <div class="card" style="margin-top:50px">
             <div class="card-body">
                 <p><b>Note:</b> Please do not enter duplicate <b>ID</b> </p>
