@@ -81,7 +81,7 @@
         <button type="submit" class="btn btn-primary mb-3" id="show-btn">Show the list of cars</button>
         <button type="submit" class="btn btn-success mb-3" id="show-form-btn">Show/hide insert form</button>
         <button type="submit" class="btn btn-warning mb-3" id="show-update-btn">Show/hide update form</button>
-        <button type="submit" class="btn btn-danger mb-3">Remove a cars</button>
+      
       </div>
       <div class="card-body" id="load-data">
       </div>
@@ -95,7 +95,7 @@
           Press <b>Show/hide form</b> button if you want to add or edit data of cars.<br />
           Press <b>Add</b> or <b>Update</b> button to submit form. <br />
           Press <b>Edit a car</b> before you want to edit data of a car.<br />
-          Press <b>Remove a car</b> to delete a car
+          Press <b>Delete a car</b> to delete a car
         </p>
       </div>
     </div>
