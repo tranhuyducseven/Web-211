@@ -20,7 +20,7 @@ if (isset($_POST['add-btn'])) {
             echo '<div class="toast">Please enter id with integer type</div>';
             $check = false;
         }
-        if (!is_string($name) || strlen($name) < 5 || strlen($name) > 40) {
+        if (!filter_var($name, FILTER_VALIDATE_STRING) || strlen($name) < 5 || strlen($name) > 40) {
             echo '<div class="toast">Please enter string type with length 5-40 characters</div>';
             $check = false;
         }
