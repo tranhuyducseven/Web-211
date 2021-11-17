@@ -61,7 +61,7 @@ if (isset($_POST['add-btn'])) {
             border-left: 4px solid #71be34;
             padding: 20px 0;
             box-shadow: 0 5px 8px rgba(0, 0, 0, 0.09);
-            animation: slideInLeft ease 2s, fadeOut linear 1s 10s forwards;
+            animation: slideInLeft ease 2s, fadeOut linear 1s 15s forwards;
             height: 50px;
             width: 400px;
             margin-top: 20px;

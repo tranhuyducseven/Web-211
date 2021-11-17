@@ -11,17 +11,18 @@
     <div class="calculator-wrapper">
       <h1>Calculator</h1>
       <form>
-        <label for="num1">The first number :</label><br />
-        <input type="text" id="num1" br />
-        <label for="num2">The second number :</label><br />
-        <input type="text" id="num2" br /><br />
+        <label for="num1">The first number :</label><br>
+        <input type="text" id="num1"/><br>
+        <label for="num2">The second number :</label><br>
+        <input type="text" id="num2"  /><br>
         <span>Operator: </span>
-        <select id="operator">
+        <select name="operator" id="operator">
           <option>+</option>
           <option>-</option>
           <option>*</option>
           <option>/</option>
           <option>^</option>
+          <option>Inverse</option>
         </select>
         <div class="button">Submit</div>
       </form>
@@ -29,7 +30,7 @@
         If you click the <b> Submit </b> button, the result of the calculation
         to be performed:
       </p>
-      <input type="text" id="result" /><br /><br />
+      <input type="text" id="result" /><br><br>
     </div>
     <script src="./main.js"></script>
   </body>
