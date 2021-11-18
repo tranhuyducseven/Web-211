@@ -98,9 +98,11 @@ $(document).ready(function () {
         check = false;
       }
       if (check) {
-        var checkConfirm = confirm(
-          "Are you sure to edit this car width id: " + curID + "to " + id
-        );
+       var msgConfirm =
+          (curID === id)
+            ? "a"
+            : "Are you sure to edit this car width id: " + curID + " to " + id;
+        var checkConfirm = confirm("Are you sure to edit the data of this car");
         if (checkConfirm) {
           $.ajax({
             url: "./c.php",
