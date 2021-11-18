@@ -138,7 +138,7 @@ $(document).ready(function() {
                 type: "DELETE",
                 data: JSON.stringify({ id: id }),
                 success: function() {
-                    alert("Successfully remove a car!");
+                    alert("Successfully  remove a car!");                    
                     viewData();
                 },
             });
